@@ -12,6 +12,7 @@ function Weather({ data }) {
             alt="/"
             width={100}
             height={100}
+            className="z-10"
           />
         </div>
       </div>
