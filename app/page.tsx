@@ -85,16 +85,16 @@ export default function Home() {
     return <Loader />;
   } else {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main className="flex min-h-screen flex-col items-center bg-gray-400/30">
         {/* Background image */}
         <Image
-          src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+          src="/bg-clouds.png"
           layout="fill"
           alt="gradient background"
           className="object-cover z-[-1] filter blur-xl"
         />
         {/* Search */}
-        <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 text-white z-10">
+        <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 px-2 text-white z-10">
           <form
             onSubmit={fetchWeather}
             className="flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-200 text-white rounded-2xl"

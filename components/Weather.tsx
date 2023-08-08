@@ -3,17 +3,64 @@ import React from "react";
 
 function Weather({ data }) {
   console.log(data);
+
   return (
-    <div>
-      <div>
-        <div>
+    <div className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10">
+      <div className="relative flex justify-between pt-10">
+        <div className="flex flex-col items-center">
           <Image
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
             alt="/"
             width={100}
             height={100}
-            className="z-10"
           />
+          <p className="text-2xl text-gray-500">{data.weather[0].main}</p>
+        </div>
+        <div className="flex flex-col">
+          <p className="text-8xl text-gray-500 pt-5">
+            {data.main.temp.toFixed(0)}&#176;F
+          </p>
+        </div>
+      </div>
+
+      <div className="relative flex justify-between text-center py-2 px-8 bg-black/40 rounded-xl my-5">
+        <div className="flex flex-col items-center px-2">
+          <p className="text-white">
+            High: {data.main.temp_max.toFixed(0)}&#176;F
+          </p>
+        </div>
+        <div className="flex flex-col items-center px-2">
+          <p className="text-white">
+            Low: {data.main.temp_min.toFixed(0)}&#176;F
+          </p>
+        </div>
+        <div className="flex flex-col items-center px-2">
+          <p className="text-white">
+            Feels Like: {data.main.feels_like.toFixed(0)}&#176;F
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom - black overlay */}
+      <div className="bg-black/40 rounded-xl relative p-8">
+        <p className="text-2xl text-center pb-6">Weather in {data.name}</p>
+        <div className="flex justify-between text-center">
+          <div>
+            <p className="font-bold text-2xl">
+              {(data.visibility / 1000).toFixed(1)} km
+            </p>
+            <p className="text-xl">Visibility</p>
+          </div>
+          <div>
+            <p className="font-bold text-2xl">{data.main.humidity}%</p>
+            <p className="text-xl">Humidity</p>
+          </div>
+          <div>
+            <p className="font-bold text-2xl">
+              {data.wind.speed.toFixed(0)} mph
+            </p>
+            <p className="text-xl">Winds</p>
+          </div>
         </div>
       </div>
     </div>
