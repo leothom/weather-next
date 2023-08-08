@@ -39,7 +39,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center bg-gray-400/30">
         {/* Background image */}
         <Image
-          src="/bg-clouds.png"
+          src="/bg-clouds.jpg"
           layout="fill"
           alt="gradient background"
           className="object-cover z-[-1] filter blur-xl"
