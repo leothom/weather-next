@@ -17,6 +17,9 @@ export default function Home() {
   const fetchWeather = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+
     // Blur the input to hide the keyboard
     if (inputRef.current) {
       inputRef.current.blur();
