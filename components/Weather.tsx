@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { unixToHumanReadable, getCurrentTime } from "../helpers/utils";
 
 function Weather({ data }) {
   console.log(data);
@@ -42,24 +43,45 @@ function Weather({ data }) {
       </div>
 
       {/* Bottom - black overlay */}
-      <div className="bg-black/40 rounded-xl relative p-8">
-        <p className="text-2xl text-center pb-6">Weather in {data.name}</p>
+      <div className="bg-black/40 rounded-xl relative p-8 my-2">
         <div className="flex justify-between text-center">
           <div>
             <p className="font-bold text-2xl">
               {(data.visibility / 1000).toFixed(1)} km
             </p>
-            <p className="text-xl">Visibility</p>
+            <p className="text-lg">Visibility</p>
           </div>
           <div>
             <p className="font-bold text-2xl">{data.main.humidity}%</p>
-            <p className="text-xl">Humidity</p>
+            <p className="text-lg">Humidity</p>
           </div>
           <div>
             <p className="font-bold text-2xl">
               {data.wind.speed.toFixed(0)} mph
             </p>
-            <p className="text-xl">Winds</p>
+            <p className="text-lg">Winds</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Time */}
+      <div className="bg-black/40 rounded-xl relative p-8 my-2">
+        <div className="flex justify-between text-center">
+          <div>
+            <p className="font-bold text-lg">
+              {unixToHumanReadable(data.sys.sunrise, data.timezone)}
+            </p>
+            <p className="text-md">Sunrise</p>
+          </div>
+          <div>
+            <p className="font-bold text-lg">{getCurrentTime(data.timezone)}</p>
+            <p className="text-md">Present</p>
+          </div>
+          <div>
+            <p className="font-bold text-lg">
+              {unixToHumanReadable(data.sys.sunset, data.timezone)}
+            </p>
+            <p className="text-md">Sunset</p>
           </div>
         </div>
       </div>
