@@ -23,6 +23,9 @@ function Loader() {
           <div></div>
         </div>
       </div>
+      <a href="/" className="underline underline-offset-8 mt-12">
+        Taking too long? It might not be a real place. Click here to go home.
+      </a>
     </>
   );
 }
