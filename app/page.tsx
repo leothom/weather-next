@@ -37,13 +37,6 @@ export default function Home() {
   } else {
     return (
       <main className="flex min-h-screen flex-col items-center bg-gray-400/30">
-        {/* Background image */}
-        <Image
-          src="/bg-clouds.jpg"
-          layout="fill"
-          alt="gradient background"
-          className="object-cover z-[-1] filter blur-xl"
-        />
         {/* Search */}
         <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 px-2 text-white z-10">
           <form
