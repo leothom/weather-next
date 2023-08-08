@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Weather from "@/components/Weather";
 import Loader from "@/components/Loader";
 import { BsSearch } from "react-icons/bs";

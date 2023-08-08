@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import { unixToHumanReadable, getCurrentTime } from "../helpers/utils";
 import { WeatherData } from "../types/types";
