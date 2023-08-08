@@ -95,11 +95,24 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center text-center ">
+      <div className="flex justify-center text-center mb-10">
         <p className="font-bold text-sm">
           The current time in {data.name} is {getCurrentTime(data.timezone)}
         </p>
       </div>
+      <a href="#top">
+        <footer className="sticky bottom-1 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <Image
+              className="animate-bounce mx-auto h-10 w-10 cursor-pointer invert"
+              src="/arrow.png"
+              width={20}
+              height={20}
+              alt="arrow"
+            />
+          </div>
+        </footer>
+      </a>
     </div>
   );
 };
