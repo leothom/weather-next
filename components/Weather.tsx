@@ -1,8 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { unixToHumanReadable, getCurrentTime } from "../helpers/utils";
+import { WeatherData } from "../types/types";
 
-function Weather({ data }) {
+interface WeatherProps {
+  data: WeatherData;
+}
+
+const Weather: React.FC<WeatherProps> = ({ data }) => {
   console.log(data);
 
   return (
@@ -87,6 +92,6 @@ function Weather({ data }) {
       </div>
     </div>
   );
-}
+};
 
 export default Weather;

@@ -5,63 +5,10 @@ import Loader from "@/components/Loader";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { WeatherData } from "../types/types";
 
 export default function Home() {
   const [city, setCity] = useState("");
-
-  interface Coord {
-    lon: number;
-    lat: number;
-  }
-
-  interface WeatherDetail {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  }
-
-  interface Main {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-  }
-
-  interface Wind {
-    speed: number;
-    deg: number;
-  }
-
-  interface Clouds {
-    all: number;
-  }
-
-  interface Sys {
-    type: number;
-    id: number;
-    country: string;
-    sunrise: number;
-    sunset: number;
-  }
-
-  interface WeatherData {
-    coord: Coord;
-    weather: WeatherDetail[];
-    base: string;
-    main: Main;
-    visibility: number;
-    wind: Wind;
-    clouds: Clouds;
-    dt: number;
-    sys: Sys;
-    timezone: number;
-    id: number;
-    name: string;
-    cod: number;
-  }
 
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
