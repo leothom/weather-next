@@ -4,26 +4,30 @@ import Weather from "@/components/Weather";
 import Loader from "@/components/Loader";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { WeatherData } from "../types/types";
 
 export default function Home() {
   const [city, setCity] = useState("");
-
   const [weather, setWeather] = useState<WeatherData | null>(null);
-
   const [loading, setLoading] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const fetchWeather = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    // Blur the input to hide the keyboard
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
+
     setLoading(true);
     axios.get(url).then((res) => {
       setWeather(res.data);
-      console.log(res.data);
       setLoading(false);
     });
     setCity("");
-    setLoading(false);
   };
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=imperial`;
@@ -48,6 +52,7 @@ export default function Home() {
           >
             <div>
               <input
+                ref={inputRef}
                 onChange={(e) => setCity(e.target.value)}
                 className="bg-transparent border-none text-white text-2xl placeholder-gray-300 focus:outline-none"
                 type="text"

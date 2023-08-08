@@ -5,7 +5,24 @@ import Image from "next/image";
 function Loader() {
   return (
     <>
-      <Image className="w-[200px] m-auto block" src={loader} alt="loader" />
+      <Image
+        src="/bg-clouds.png"
+        layout="fill"
+        alt="gradient background"
+        className="object-cover z-[-1] filter blur-xl"
+      />
+      <div className="grid h-screen place-items-center">
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </>
   );
 }
