@@ -12,10 +12,7 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
   console.log(data);
 
   return (
-    <div
-      className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10"
-      id="top"
-    >
+    <div className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10">
       {/* City name */}
       <div>
         <h1 className="text-7xl pt-10 text-white underline underline-offset-8">
@@ -103,7 +100,7 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
           The current time in {data.name} is {getCurrentTime(data.timezone)}
         </p>
       </div>
-      <a href="#top">
+      {/* <a href="#top">
         <footer className="sticky bottom-1 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <Image
@@ -115,7 +112,7 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
             />
           </div>
         </footer>
-      </a>
+      </a> */}
     </div>
   );
 };
