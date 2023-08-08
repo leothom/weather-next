@@ -13,6 +13,10 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
 
   return (
     <div className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10">
+      {/* City name */}
+      <div>
+        <h1 className="text-7xl pt-10 text-white">{data.name}</h1>
+      </div>
       {/* Icon and current temp */}
       <div className="relative flex justify-between pt-10">
         <div className="flex flex-col items-center">
@@ -22,10 +26,10 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
             width={100}
             height={100}
           />
-          <p className="text-2xl text-gray-500">{data.weather[0].main}</p>
+          <p className="text-2xl text-white">{data.weather[0].main}</p>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-8xl text-gray-500 pt-5">
+          <p className="text-8xl text-white pt-5">
             {data.main.temp.toFixed(0)}&#176;F
           </p>
         </div>
