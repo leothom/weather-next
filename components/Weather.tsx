@@ -12,7 +12,10 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
   console.log(data);
 
   return (
-    <div className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10">
+    <div
+      className="relative flex flex-col max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10"
+      id="top"
+    >
       {/* City name */}
       <div>
         <h1 className="text-7xl pt-10 text-white underline underline-offset-8">

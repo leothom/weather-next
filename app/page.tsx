@@ -39,10 +39,7 @@ export default function Home() {
     return <Loader />;
   } else {
     return (
-      <main
-        className="flex min-h-screen flex-col items-center bg-gray-400/30"
-        id="top"
-      >
+      <main className="flex min-h-screen flex-col items-center bg-gray-400/30">
         {/* Search */}
         <div className="relative flex justify-between items-center max-w-[500px] w-full m-auto pt-4 px-2 text-white z-10">
           <form
