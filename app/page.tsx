@@ -3,6 +3,7 @@ import Image from "next/legacy/image";
 import Weather from "@/components/Weather";
 import Loader from "@/components/Loader";
 import { BsSearch } from "react-icons/bs";
+import { MdErrorOutline } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import { WeatherData } from "../types/types";
@@ -11,26 +12,36 @@ export default function Home() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const fetchWeather = (e: { preventDefault: () => void }) => {
+  const fetchWeather = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    // Scroll to the top of the page
     window.scrollTo(0, 0);
 
-    // Blur the input to hide the keyboard
+    setError(null);
+
     if (inputRef.current) {
       inputRef.current.blur();
     }
 
     setLoading(true);
-    axios.get(url).then((res) => {
+
+    try {
+      const res = await axios.get(url);
       setWeather(res.data);
+    } catch (err) {
+      if (err.response && err.response.status === 404) {
+        setError("City not found. Please try again.");
+      } else {
+        setError("An error occurred. Please try again later.");
+      }
+    } finally {
       setLoading(false);
-    });
-    setCity("");
+      setCity("");
+    }
   };
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=imperial`;
@@ -54,6 +65,11 @@ export default function Home() {
                 type="text"
                 placeholder="Search city"
               />
+              {error && (
+                <div className="text-red-900 align-top animate-pulse">
+                  {error}
+                </div>
+              )}
             </div>
             <button onClick={fetchWeather}>
               <BsSearch size={20} />
