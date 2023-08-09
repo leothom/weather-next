@@ -32,7 +32,7 @@ export default function Home() {
     try {
       const res = await axios.get(url);
       setWeather(res.data);
-    } catch (err) {
+    } catch (err: any) {
       if (err.response && err.response.status === 404) {
         setError("City not found. Please try again.");
       } else {
