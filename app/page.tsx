@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/legacy/image";
 import Weather from "@/components/Weather";
 import Loader from "@/components/Loader";
 import { BsSearch } from "react-icons/bs";
-import { MdErrorOutline } from "react-icons/md";
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { WeatherData } from "../types/types";
 
 export default function Home() {
