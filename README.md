@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Weather Dashboard
 
-## Getting Started
+A sleek and modern weather dashboard built using the latest web technologies. Find weather conditions for your city in a jiffy.
 
-First, run the development server:
+### Technologies Used:
 
-```bash
+- Next.js 13
+- TypeScript
+- Tailwind CSS
+- OpenWeatherMap API
+
+### Features:
+
+- Real-time weather data
+- Responsive design - works on mobile and desktop devices
+- Quick city search functionality
+- Detailed weather information including temperature, humidity, wind speed, and more
+- Beautiful and intuitive UI
+
+### Getting Started:
+
+1. **Clone the repository**
+
+git clone https://github.com/your-github-username/weather-dashboard.git
+cd weather-dashboard
+
+2. **Install the dependencies**
+
+npm install
+
+3. Setup Environment Variables
+
+Create a .env file in the root directory and add your OpenWeatherMap API key:
+
+NEXT_PUBLIC_WEATHER_KEY=YOUR_OPENWEATHERMAP_API_KEY
+
+4. Run the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Contribution:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 
-## Learn More
+### Feedback:
 
-To learn more about Next.js, take a look at the following resources:
+If you have any feedback, issues, or feature requests, please post them in the issues section.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### License:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is open-source and available under the MIT License.
