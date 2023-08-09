@@ -21,22 +21,22 @@ A sleek and modern weather dashboard built using the latest web technologies. Fi
 
 1. **Clone the repository**
 
-git clone https://github.com/leothom/weather-next.git
-cd weather-dashboard
+`git clone https://github.com/leothom/weather-next.git`
+`cd weather-dashboard`
 
 2. **Install the dependencies**
 
-npm install
+`npm install`
 
 3. Setup Environment Variables
 
 Create a .env file in the root directory and add your OpenWeatherMap API key:
 
-NEXT_PUBLIC_WEATHER_KEY=YOUR_OPENWEATHERMAP_API_KEY
+`NEXT_PUBLIC_WEATHER_KEY=YOUR_OPENWEATHERMAP_API_KEY`
 
 4. Run the development server
 
-npm run dev
+`npm run dev`
 
 5. Open http://localhost:3000 with your browser to see the result.
 
